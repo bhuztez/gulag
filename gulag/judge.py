@@ -135,7 +135,7 @@ class Judge(object):
                     with open(error_file, 'wb') as f:
                         f.write(results[5])
                 else:
-                    error_file.write(result[5])
+                    error_file.write(results[5])
                 return results[:-1]
             return results
 
