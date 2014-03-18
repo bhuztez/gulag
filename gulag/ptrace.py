@@ -73,7 +73,7 @@ class PTracedProcess(Popen):
     def _on_sigchld(self, fd):
         read(fd, sizeof(signalfd_siginfo))
 
-        pid, status, usage = wait4(self.pid, (WUNTRACED | WNOHANG))
+        pid, status, usage = wait4(self.pid, WUNTRACED)
         assert pid != 0
 
         if not WIFSTOPPED(status):
